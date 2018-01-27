@@ -1,0 +1,43 @@
+limit_conn_zone $binary_remote_addr zone=addr:10m;
+#limit_req_zone $binary_remote_addr zone=one:10m rate=1390009r/s;
+
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html/rutorrent;
+        index index.php index.html index.htm;
+
+        server_name _;
+
+        location /torrent {
+                try_files            $uri $uri/ =404;
+                #auth_basic           "Restricted";
+                #auth_basic_user_file /var/www/html/rutorrent/.htpasswd;
+		limit_conn addr 10;
+
+        }
+
+        location ~ [^/]\.php(/|$) {
+                include snippets/fastcgi-php.conf;
+
+		#limit_req zone=one nodelay;
+		
+
+                fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+                if (!-f $document_root$fastcgi_script_name) {
+                        return 404;
+                }
+
+                fastcgi_pass unix:/var/run/php5-fpm.sock;
+
+                include fastcgi_params;
+        }
+        location /RPC2 {
+            include scgi_params;
+            scgi_pass unix:/tmp/rpc.sock;
+        }
+	location ~ .(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$ { deny all; }
+	location /.git/ {deny all; }
+	
+}
