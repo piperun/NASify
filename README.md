@@ -2,7 +2,7 @@ This is a WIP but the basic idea is to allow users to easily deploy a NAS server
 
 
 
-##TODO:
+## TODO:
 
 	* Add SAMBA configs
 	* Linux optimizations confs
@@ -10,17 +10,17 @@ This is a WIP but the basic idea is to allow users to easily deploy a NAS server
 	* Stuff I've missed
 	* Ansible
 
----
+===
 
-##VERSION GOALS:
+## VERSION GOALS:
 
-###V1:
+### V1:
 
 Make sure everything works on a fresh machine as is 
 
 ---
 
-###V2:
+### V2:
 
 	* Add rtinst as a quick bandaid
 
@@ -28,7 +28,7 @@ Make sure everything works on a fresh machine as is
 
 ---
 
-###V3:
+### V3:
 
 	* Add support for SAMBA
 	* User OS dependent configuration (SAMBA for Windows, SSHFS/NFS for Linux/BSD)
@@ -36,7 +36,7 @@ Make sure everything works on a fresh machine as is
 	* Add support for LDAP if needed
 	* Add support for Kerberos if needed
 
-**Maybe**:
+Maybe:
 	* Rule out rutorrent for flood, if user has enough space
 	* Add support for streaming
 	* Add support for torque
