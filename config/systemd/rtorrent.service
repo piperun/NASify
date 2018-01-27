@@ -11,7 +11,7 @@ PermissionsStartOnly=true
 ExecStartPre=/bin/mkdir -p /var/run/rtorrent
 ExecStartPre=/bin/chown -R rtorrent:rtorrent /var/run/rtorrent
 # Run
-ExecStart=/usr/bin/tmux new-session -c /media/rumia/torrents -s rtorrent -n rTorrent -d rtorrent
+ExecStart=/usr/bin/tmux new-session -c torrents -s rtorrent -n rTorrent -d rtorrent
 ExecStop=/usr/bin/tmux send-keys -t rtorrent C-q && /usr/bin/tmux kill-session -t rtorrent
 WorkingDirectory=/home/rtorrent/
 Restart=on-failure
