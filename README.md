@@ -36,7 +36,8 @@ Make sure everything works on a fresh machine as is
 	* Add support for LDAP if needed
 	* Add support for Kerberos if needed
 
-Maybe:
+### Maybe:
+
 	* Rule out rutorrent for flood, if user has enough space
 	* Add support for streaming
 	* Add support for torque
