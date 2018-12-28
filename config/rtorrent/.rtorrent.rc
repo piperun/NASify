@@ -1,6 +1,10 @@
 # For rutorrent
 execute = {sh,-c,/usr/bin/php7 /usr/share/webapps/rutorrent/php/initplugins.php abc &}
 
+# Daemon Setting 
+# !!! 0.9.7+ ONLY !!!
+system.daemon = true 
+
 # Socket settings
 scgi_local = /var/run/rtorrent/rpc.sock
 schedule = socket_chmod,0,0,"execute=chmod,0660,/var/run/rtorrent/rpc.sock"
