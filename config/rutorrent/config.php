@@ -40,7 +40,7 @@
         $XMLRPCMountPoint = "/RPC2";            // DO NOT DELETE THIS LINE!!! DO NOT COMMENT THIS LINE!!!
 
         $pathToExternals = array(
-                "php"   => '',                  // Something like /usr/bin/php. If empty, will be found in PATH.
+                "php"   => '/usr/bin/php7',                  // Something like /usr/bin/php. If empty, will be found in PATH.
                 "curl"  => '',                  // Something like /usr/bin/curl. If empty, will be found in PATH.
                 "gzip"  => '',                  // Something like /usr/bin/gzip. If empty, will be found in PATH.
                 "id"    => '',                  // Something like /usr/bin/id. If empty, will be found in PATH.
