@@ -64,11 +64,13 @@ These are the packages NASify utilizes:
 
 ### Down the line:
 Add support for:
+
 	* plex
 	* couchpotato
 
 ### Maybe:
 Add support for:
+
 	* flood
 	* streaming (might not be needed given you can play over sshfs/SAMBA)
 	* torque (unlikely)
