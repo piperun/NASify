@@ -24,6 +24,7 @@ Since rtorrent now support somewhat daemon/headless mode (you still have to make
 
 # Packages:
 These are the packages NASify utilizes:
+
 	* Samba
 	* Nginx
 	* Ansible (not installed inside the container)
@@ -68,6 +69,7 @@ These are the packages NASify utilizes:
 
 ### Maybe:
 	Add support for:
+	
 	* flood
 	* streaming (might not be needed given you can play over sshfs/SAMBA)
 	* torque (unlikely)
