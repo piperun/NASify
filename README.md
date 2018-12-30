@@ -2,7 +2,7 @@ Still very much WIP, however the config files should be enough to start rtorrent
 
 NASify is a toolkit to deploy a basic container based NAS server.
 
-To do this we're using lxd instead of Docker due to it's more flexible but powerful out-of-the-box enviroment.
+To do this we're using [lxd](https://linuxcontainers.org/lxd/introduction/) instead of Docker due to it's more flexible but powerful out-of-the-box enviroment.
 
 
 
