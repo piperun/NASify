@@ -54,9 +54,6 @@ These are the packages NASify utilizes:
 
 ---
 
-
----
-
 ### V2:
 	* Add support for SAMBA
 	* Give choice between vsftpd and SFTP/SCP
