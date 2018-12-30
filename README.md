@@ -42,7 +42,6 @@ These are the packages NASify utilizes:
 	* Stuff I've missed
 	* Ansible
 
-===
 
 ## VERSION GOALS:
 
