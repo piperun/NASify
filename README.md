@@ -25,52 +25,53 @@ Since rtorrent now support somewhat daemon/headless mode (you still have to make
 # Packages:
 These are the packages NASify utilizes:
 
-	* Samba
-	* Nginx
-	* Ansible (not installed inside the container)
-	* sftp or vsftpd (optional)
-	* rtorrent
-	* rutorrent
+* Samba
+* Nginx
+* Ansible (not installed inside the container)
+* sftp or vsftpd (optional)
+* rtorrent
+* rutorrent
+* lxd
 
 
 
 ## TODO:
 
-	* Add SAMBA configs
-	* Linux optimizations confs
-	* Misc stuff
-	* Stuff I've missed
-	* Ansible
+* Add SAMBA configs
+* Linux optimizations confs
+* Misc stuff
+* Stuff I've missed
+* Ansible
 
 
 ## VERSION GOALS:
 
 ### V1:
 
-	* Make sure everything works on a fresh machine as is 
-	* Create basic Ansible deployment script
-	* 
+* Make sure everything works on a fresh machine as is 
+* Create basic Ansible deployment script
+* 
 
 ---
 
 ### V2:
-	* Add support for SAMBA
-	* Give choice between vsftpd and SFTP/SCP
-	* Add HTTPS for nginx
+* Add support for SAMBA
+* Give choice between vsftpd and SFTP/SCP
+* Add HTTPS for nginx
 
 ### Down the line:
 Add support for:
 
-	* plex
-	* couchpotato
+* plex
+* couchpotato
 
 ### Maybe:
 Add support for:
 
-	* flood
-	* streaming (might not be needed given you can play over sshfs/SAMBA)
-	* torque (unlikely)
-	* screen/tmux (likely not needed anymore)
-	* LDAP 
-	* Kerberos 
+* flood
+* streaming (might not be needed given you can play over sshfs/SAMBA)
+* torque (unlikely)
+* screen/tmux (likely not needed anymore)
+* LDAP 
+* Kerberos 
 ---
