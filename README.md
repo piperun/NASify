@@ -15,7 +15,7 @@ Since rtorrent now support somewhat daemon/headless mode (you still have to make
 
 
 ## Requirements:
-	* Linux host (BSD not supported, but can be ported to BSD jails)
+	* Linux host (BSD not supported, but can be ported to work with BSD jails)
 	* Ansible
 	* SSH access to NAS
 	* lxd
