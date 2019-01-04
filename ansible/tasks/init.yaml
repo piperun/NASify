@@ -1,0 +1,17 @@
+---
+- hosts: remote
+  become: yes
+  become_user: root
+  
+  tasks:
+    - name: "Check if lxd is installed"
+    shell: "which lxd"
+    args:
+      executable: /bin/bash
+    register: lxd_result
+
+    #- name: "Install lxd"
+
+
+
+
