@@ -1,4 +1,6 @@
 #Ignore Ansible hosts
 *.retry
 *.swp
+**/*.retry
+**/*.swp
 ansible/hosts
