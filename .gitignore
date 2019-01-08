@@ -1,6 +1,12 @@
 #Ignore Ansible hosts
 *.retry
+<<<<<<< Updated upstream
 *.swp
 **/*.retry
 **/*.swp
 ansible/hosts
+=======
+ansible/hosts
+>>>>>>> Stashed changes
+
+*.key
