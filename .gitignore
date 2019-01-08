@@ -1,2 +1,3 @@
 #Ignore Ansible hosts
+*.retry
 ansible/hosts
