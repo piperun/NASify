@@ -1,0 +1,58 @@
+---
+- hosts: nas
+  #  become: yes
+
+  ##################################################
+  #                       CHECK                    #
+  ##################################################
+  #
+  tasks:
+          - name: "check lxd exists"
+            register: lxd_result
+            shell: "which lxd | cat "
+            args:
+                    executable: /bin/bash
+
+          - name: "check seedbox exists & is running"
+            register: seedbox_result
+            shell: "lxc list | grep -o \'seedbox | RUNNING\' | cat"
+            args:
+                    executable: /bin/bash
+
+          - name: " check python 2.7 exists  "
+            delegate_to: seedbox
+            raw: apk info | grep python2
+            register: python_install_check
+            failed_when: python_install_check.rc not in [0, 1]
+            changed_when: false
+
+            ##################################################
+            #                  BUILD/INSTALL                 #
+            ##################################################
+
+
+          - name: "create seedbox container"
+            register: seedbox_result
+            when: seedbox_result.stdout == ""
+            lxd_container:
+                    name: seedbox
+                    state: started
+                    source:
+                            type: image
+                            mode: pull
+                            server: https://images.linuxcontainers.org
+                            protocol: lxd
+                            alias: alpine/3.8/amd64
+                            profiles: ["default"]
+                            wait_for_ipv4_addresses: true
+                            timeout: 600
+
+
+
+
+
+                            #- name: "Install lxd"
+
+
+
+

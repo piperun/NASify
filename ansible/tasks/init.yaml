@@ -1,14 +1,35 @@
 ---
+<<<<<<< Updated upstream
 - hosts: testing
+=======
+- hosts: nas
+>>>>>>> Stashed changes
   become: yes
-  become_user: root
   
+##################################################
+#                       CHECK                    #
+##################################################
+#
   tasks:
-    - name: "Check if lxd is installed"
-    shell: "which lxd"
-    args:
-      executable: /bin/bash
-    register: lxd_result
+          - name: "check lxd exists"
+            shell: "which lxd | cat "
+            args:
+                    executable: /bin/bash
+
+            register: lxd_result
+
+
+
+##################################################
+#                  BUILD/INSTALL                 #
+##################################################
+
+
+          - name: "install lxd"
+            package:
+                    name: lxd
+                    state: present
+            when: lxd_result.stdout == ""
 
     #- name: "Install lxd"
 

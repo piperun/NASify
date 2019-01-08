@@ -10,3 +10,5 @@ ansible/hosts
 >>>>>>> Stashed changes
 
 *.key
+
+ansible/private\.yaml
