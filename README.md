@@ -1,13 +1,14 @@
+
 Still very much WIP, however the config files should be enough to start rtorrent + rutorrent.
 
-NASify is a toolkit to deploy a basic container based NAS server.
+NASify is a "roll your own" toolkit to deploy a basic container based NAS server.
 
 To do this we're using [lxd](https://linuxcontainers.org/lxd/introduction/) instead of Docker due to it's more flexible but powerful out-of-the-box enviroment.
 
 
 
 
-NASify uses the Alpine linux (edge) amd64 image, but this can be changed given the user change certain paths.
+NASify uses the Alpine linux (3.8) amd64 image, but you can switch distro and or version but you'll need to fix any upcoming errors yourself.
 
 Note: It is highly recommended you get accustom to the tools used in NASify before trying NASify.
 
