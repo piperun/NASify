@@ -1,9 +1,5 @@
 ---
-<<<<<<< Updated upstream
-- hosts: testing
-=======
 - hosts: nas
->>>>>>> Stashed changes
   become: yes
   
 ##################################################
@@ -18,6 +14,15 @@
 
             register: lxd_result
 
+          - name: "check ansible exists"
+            shell: "which ansible | cat "
+            args:
+                    executable: /bin/bash
+
+            register: ansible_result
+
+
+
 
 
 ##################################################
@@ -30,6 +35,13 @@
                     name: lxd
                     state: present
             when: lxd_result.stdout == ""
+
+          - name: "install ansible"
+            package:
+                    name: ansible
+                    state: present
+            when: lxd_result.stdout == ""
+
 
     #- name: "Install lxd"
 

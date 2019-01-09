@@ -13,13 +13,13 @@ ansi_init() {
 }
 
 ansi_lxd() {
-		ansible-playbook -i ./ansible/hosts -vv --vault-password-file=./ansible/ansible.key --extra-vars '@./ansible/private.yaml' ansible/tasks/lxd.yaml
+		ansible-playbook -i ./ansible/hosts --vault-password-file=./ansible/ansible.key --extra-vars '@./ansible/private.yaml' ansible/tasks/lxd.yaml
 }
 
 main() {
 		# pre-install setup
 		generatekey
-		#ansi_init
+		ansi_init
 		txt_remote
 		check_lxd_init
 
