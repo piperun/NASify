@@ -40,7 +40,7 @@
             package:
                     name: ansible
                     state: present
-            when: lxd_result.stdout == ""
+            when: ansible_result.stdout == ""
 
 
     #- name: "Install lxd"
