@@ -1,11 +1,19 @@
 ---
 - hosts: nas
-  #  become: yes
+  vars: 
+      pkgs:
+              - python2
+              - libressl
+              - rutorrent
+              - nginx
+              - rtorrent
 
-  ##################################################
-  #                       CHECK                    #
-  ##################################################
-  #
+
+
+            ##################################################
+            #                       CHECK                    #
+            ##################################################
+
   tasks:
           - name: "check lxd exists"
             register: lxd_result
@@ -19,17 +27,25 @@
             args:
                     executable: /bin/bash
 
-          - name: " check python 2.7 exists  "
-            delegate_to: seedbox
-            raw: apk info | grep python2
-            register: python_install_check
-            failed_when: python_install_check.rc not in [0, 1]
-            changed_when: false
+          - name: "check if seedbox has sshd"
+            register: sshd_result
+            shell: "lxc exec seedbox which sshd | cat"
+            args:
+                    executable: /bin/bash
 
-            ##################################################
-            #                  BUILD/INSTALL                 #
-            ##################################################
+          - name: "check if pkgs exists in seedbox"
+            register: pkg_result
+            with_items: "{{ pkgs }}"
+            shell: "lxc exec seedbox which {{ item }}  | cat"
+            args:
+                    executable: /bin/bash
 
+
+
+
+                    ##################################################
+                    #                  BUILD/INSTALL                 #
+                    ##################################################
 
           - name: "create seedbox container"
             register: seedbox_result
@@ -47,12 +63,13 @@
                             wait_for_ipv4_addresses: true
                             timeout: 600
 
+          - name: "install ssh on seedbox"
+            command: "lxc exec seedbox apk add openssh"
+            register: 
+            when: sshd_result.stdout == ""
 
-
-
-
-                            #- name: "Install lxd"
-
-
-
+          - name: "install missing packages on seedbox"
+            with_items: "{{ pkg_result.results }}"
+            when: item.stdout == ""
+            command: "lxc exec seedbox apk add {{ item.item }}"
 
