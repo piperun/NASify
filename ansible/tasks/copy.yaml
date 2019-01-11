@@ -1,0 +1,10 @@
+---
+- hosts: nas
+
+
+
+  tasks:
+
+          - name: "copy config to NAS"
+            copy:
+                    src: ./config.tar

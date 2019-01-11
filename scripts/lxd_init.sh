@@ -1,3 +1,7 @@
+
+. ./utils.sh
+
+
 txt_remote() {
 		echo "You will now connect to the NAS and setup lxd afterwards the installation will continue"
 		echo "Afterwards there should be a file called: lxd_var in /tmp"
