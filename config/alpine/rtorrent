@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+command="/usr/bin/rtorrent"
+command_user="rtorrent"
+pidfile="/var/run/rtorrent.pid"
+command_background="yes"
+name="rtorrent"
+
+description="rtorrentd daemon for rtorrent"
+
+start_pre() {
+    checkpath --directory --owner rtorrent:rtorrent --mode 0775 \
+        /var/run/rtorrent/
+}
